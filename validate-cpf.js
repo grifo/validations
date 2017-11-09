@@ -29,7 +29,7 @@
 const validateCPF = (cpf) => {
   const stripped = cpf.replace(/(\.|-)/g, '');
   if (stripped.length !== 11 || /^(.)\1+$/.test(stripped)) return false;
-  const arr = value.replace(/(\.|-)/g, '').split('').map(Number);
+  const arr = stripped.split('').map(Number);
 
   return [10, 11].every((n) => {
     const calc = arr.slice(0, n - 1).reduce((p, d, i) => p + (parseInt(d, 10) * (n - i)), 0);
@@ -40,4 +40,5 @@ const validateCPF = (cpf) => {
   });
 };
 
-export default testCPF;
+export default validateCPF;
+
