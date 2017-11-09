@@ -32,8 +32,7 @@ const validateCPF = (cpf) => {
   const arr = value.replace(/(\.|-)/g, '').split('').map(Number);
 
   return [10, 11].every((n) => {
-    const calc = arr.slice(0, n - 1)
-      .reduce((prev, digit, index) => prev + (parseInt(digit, 10) * (n - index)), 0);
+    const calc = arr.slice(0, n - 1).reduce((p, d, i) => p + (parseInt(d, 10) * (n - i)), 0);
     let remainder = (calc * 10) % 11;
 
     if (remainder === 10 || remainder === 11) remainder = 0;
