@@ -1,6 +1,6 @@
 # Validations
 
-Repository to validation scripts
+Repository to keep little validator scripts to copy and paste.
 
 ## Todo:
 - Tests
