@@ -37,8 +37,7 @@ const validateCPF = (cpf) => {
     let remainder = (calc * 10) % 11;
 
     if (remainder === 10 || remainder === 11) remainder = 0;
-    if (remainder !== parseInt(arr.slice(n - 1, n).join(''), 10)) return false;
-    return true;
+    return remainder === parseInt(arr.slice(n - 1, n).join(''), 10);
   });
 };
 
